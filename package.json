@@ -26,12 +26,15 @@
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@infra-blocks/github-actions": "^0.2.1",
+    "@infra-blocks/json": "^0.1.0",
+    "keep-a-changelog": "^2.5.3",
     "verror": "^1.10.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@infra-blocks/test": "^0.3.0",
     "@types/mocha": "^10.0.6",
+    "@types/mock-fs": "^4.13.4",
     "@types/node": "^20.10.7",
     "@types/verror": "^1.10.9",
     "@typescript-eslint/eslint-plugin": "^6.18.0",
@@ -42,6 +45,7 @@
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-prettier": "^5.1.2",
     "mocha": "^10.2.0",
+    "mock-fs": "^5.2.0",
     "prettier": "^3.1.1",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",

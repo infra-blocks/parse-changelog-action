@@ -9,21 +9,51 @@ A template repository for GitHub Actions hosted as docker images on registries.
 
 ## Inputs
 
-|     Name      | Required | Description      |
-|:-------------:|:--------:|------------------|
-| example-input |   true   | A useless input. |
+|      Name      | Required | Description                                                                     |
+|:--------------:|:--------:|---------------------------------------------------------------------------------|
+| changelog-file |  false   | The path to the changelog file. Defaults to CHANGELOG.md in the root directory. |
 
 ## Outputs
 
-|      Name      | Description                    |
-|:--------------:|--------------------------------|
-| example-output | An equivalently useless output |
+| Name | Description                                                                          |
+|:----:|--------------------------------------------------------------------------------------|
+| json | The stringified JSON output parsed out of the changelog. See [format](#json-format). |
+
+### JSON format
+
+The output has the following format:
+```json
+{
+  "title": "Changelog",
+  "description": "Test changelog.",
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2024-04-14",
+      "description": "",
+      "changes": {
+        "added": [
+          {
+            "title": "Stuff.",
+            "description": "",
+            "issues": []
+          }
+        ],
+        "changed": [],
+        "deprecated": [],
+        "removed": [],
+        "fixed": [],
+        "security": []
+      },
+      "yanked": false
+    }
+  ]
+}
+```
 
 ## Permissions
 
-|     Scope     | Level | Reason   |
-|:-------------:|:-----:|----------|
-| pull-requests | read  | Because. |
+N/A
 
 ## Usage
 

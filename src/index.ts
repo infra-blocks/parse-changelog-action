@@ -3,5 +3,5 @@ import { handler } from "./handler.js";
 import { parseInputs } from "./inputs.js";
 
 runActionHandler(() => {
-  return handler(parseInputs(getInputs("example-input")));
+  return handler(parseInputs(getInputs("changelog-file")));
 });
