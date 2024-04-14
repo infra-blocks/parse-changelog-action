@@ -1,13 +1,13 @@
 {
-  "name": "@infra-blocks/docker-typescript-action-template",
+  "name": "@infra-blocks/parse-changelog-action",
   "version": "0.0.0",
-  "homepage": "https://github.com/infrastructure-blocks/docker-typescript-action-template#readme",
+  "homepage": "https://github.com/infrastructure-blocks/parse-changelog-action#readme",
   "bugs": {
-    "url": "https://github.com/infrastructure-blocks/docker-typescript-action-template/issues"
+    "url": "https://github.com/infrastructure-blocks/parse-changelog-action/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/infrastructure-blocks/docker-typescript-action-template.git"
+    "url": "git+https://github.com/infrastructure-blocks/parse-changelog-action.git"
   },
   "license": "ISC",
   "author": "PhilLavoie",
