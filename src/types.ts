@@ -1,11 +1,13 @@
+import { JsonObject } from "@infra-blocks/json";
+
 export interface Inputs {
-  "example-input"?: string;
+  "changelog-file"?: string;
 }
 
 export interface HandlerParams {
-  exampleInput: string;
+  changelogFile: string;
 }
 
 export interface HandlerOutputs {
-  "example-output": string;
+  json: JsonObject;
 }

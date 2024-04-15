@@ -45,11 +45,12 @@ jobs:
     needs:
       - build-image
     steps:
+      - uses: actions/checkout@v4
       - uses: jenseng/dynamic-uses@v1
         id: self-test
         with:
           uses: docker://public.ecr.aws/${{ github.repository }}:git-sha-${{ github.sha }}
-          with: '{"example-input": "hello"}'
+          with: '{"changelog-file": "TEST-CHANGELOG.md"}'
       - name: Show outputs
         run: |
           # To respect nested stringified objects, we need to properly escape quotes.

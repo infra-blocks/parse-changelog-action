@@ -1,7 +1,7 @@
 services:
   action:
-    image: public.ecr.aws/infrastructure-blocks/docker-typescript-action-template:latest
+    image: public.ecr.aws/infrastructure-blocks/parse-changelog-action:latest
     build:
       context: ../
       dockerfile: docker/action/Dockerfile
-    container_name: docker-typescript-action-template
+    container_name: parse-changelog-action

@@ -1,49 +1,64 @@
-# docker-typescript-action-template
-[![Build Image](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/build-image.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/build-image.yml)
-[![Docker Tag](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/docker-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/docker-tag.yml)
-[![Git Tag Semver From Label](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/git-tag-semver-from-label.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/git-tag-semver-from-label.yml)
-[![Trigger Update From Template](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml)
-[![codecov](https://codecov.io/gh/infrastructure-blocks/docker-typescript-action-template/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infrastructure-blocks/docker-typescript-action-template)
+# parse-changelog-action
+[![Build Image](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/build-image.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/build-image.yml)
+[![Docker Tag](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/docker-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/docker-tag.yml)
+[![Git Tag Semver From Label](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/git-tag-semver-from-label.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/git-tag-semver-from-label.yml)
+[![Update From Template](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/update-from-template.yml)
+[![codecov](https://codecov.io/gh/infrastructure-blocks/parse-changelog-action/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infrastructure-blocks/parse-changelog-action)
 
 A template repository for GitHub Actions hosted as docker images on registries.
 
-## Instantiation checklist
-
-- Remove the [trigger update from template workflow](.github/workflows/trigger-update-from-template.yml)
-- Rename the docker image/container in [docker compose file](./docker/docker-compose.yml)
-- Edit the package.json to reflect the action's name and links
-- Run `nvm install`
-- Run `npm install`
-- Replace the self-test section of the [build-image workflow](.github/workflows/build-image.yml).
-- Set up code coverage
-- Update the status badges:
-    - Remove the `Trigger Update From Template` status badge.
-    - Add the `Update From Template` status badge.
-    - Rename the rest of the links to point to the right repository.
-- Replace the summary and the action usage section in this document.
-
 ## Inputs
 
-|     Name      | Required | Description      |
-|:-------------:|:--------:|------------------|
-| example-input |   true   | A useless input. |
+|      Name      | Required | Description                                                                     |
+|:--------------:|:--------:|---------------------------------------------------------------------------------|
+| changelog-file |  false   | The path to the changelog file. Defaults to CHANGELOG.md in the root directory. |
 
 ## Outputs
 
-|      Name      | Description                    |
-|:--------------:|--------------------------------|
-| example-output | An equivalently useless output |
+| Name | Description                                                                          |
+|:----:|--------------------------------------------------------------------------------------|
+| json | The stringified JSON output parsed out of the changelog. See [format](#json-format). |
+
+### JSON format
+
+The output has the following format:
+```json
+{
+  "title": "Changelog",
+  "description": "Test changelog.",
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2024-04-14",
+      "description": "",
+      "changes": {
+        "added": [
+          {
+            "title": "Stuff.",
+            "description": "",
+            "issues": []
+          }
+        ],
+        "changed": [],
+        "deprecated": [],
+        "removed": [],
+        "fixed": [],
+        "security": []
+      },
+      "yanked": false
+    }
+  ]
+}
+```
 
 ## Permissions
 
-|     Scope     | Level | Reason   |
-|:-------------:|:-----:|----------|
-| pull-requests | read  | Because. |
+N/A
 
 ## Usage
 
 ```yaml
-- uses: docker://public.ecr.aws/infrastructure-blocks/docker-typescript-action-template:v1
+- uses: docker://public.ecr.aws/infrastructure-blocks/parse-changelog-action:v1
   with:
     example-input: hello
 ```
