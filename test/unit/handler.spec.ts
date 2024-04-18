@@ -9,16 +9,18 @@ describe("handler", function () {
     });
 
     it("should work with minimal changelog", async function () {
+      const changelogFile = "CHANGELOG.md";
       mockFs({
-        "CHANGELOG.md": "# Changelog",
+        [changelogFile]: "# Changelog",
       });
 
-      expect(await handler({ changelogFile: "CHANGELOG.md" })).to.deep.equal({
+      expect(await handler({ changelogFile })).to.deep.equal({
         json: {
           title: "Changelog",
           description: "",
           releases: [],
         },
+        "changelog-file": changelogFile,
       });
     });
 
@@ -34,12 +36,12 @@ Test changelog.
 
 - Stuff.
 `;
-
+      const changelogFile = "BIG-CHANGELOG.md";
       mockFs({
-        "CHANGELOG.md": changelog,
+        [changelogFile]: changelog,
       });
 
-      expect(await handler({ changelogFile: "CHANGELOG.md" })).to.deep.equal({
+      expect(await handler({ changelogFile })).to.deep.equal({
         json: {
           title: "Changelog",
           description: "Test changelog.",
@@ -66,6 +68,7 @@ Test changelog.
             },
           ],
         },
+        "changelog-file": changelogFile,
       });
     });
   });

@@ -15,9 +15,10 @@ A template repository for GitHub Actions hosted as docker images on registries.
 
 ## Outputs
 
-| Name | Description                                                                          |
-|:----:|--------------------------------------------------------------------------------------|
-| json | The stringified JSON output parsed out of the changelog. See [format](#json-format). |
+|      Name      | Description                                                                                                           |
+|:--------------:|-----------------------------------------------------------------------------------------------------------------------|
+| changelog-file | The effective changelog-file used. If a value was provided, then it is the value. Otherwise, it is the default value. |
+|      json      | The stringified JSON output parsed out of the changelog. See [format](#json-format).                                  |
 
 ### JSON format
 
@@ -60,7 +61,7 @@ N/A
 ```yaml
 - uses: docker://public.ecr.aws/infrastructure-blocks/parse-changelog-action:v1
   with:
-    example-input: hello
+    changelog-file: DIFFERENT-CHANGELOG-FILE.md
 ```
 
 ## Releasing
