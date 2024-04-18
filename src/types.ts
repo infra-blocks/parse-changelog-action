@@ -10,4 +10,5 @@ export interface HandlerParams {
 
 export interface HandlerOutputs {
   json: JsonObject;
+  "changelog-file": string;
 }

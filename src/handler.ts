@@ -11,7 +11,7 @@ export async function handler(params: HandlerParams): Promise<HandlerOutputs> {
   const content = await readFile(changelogFile, { encoding: "utf-8" });
   const parsed = parser(content);
 
-  return { json: serialize(parsed) };
+  return { json: serialize(parsed), "changelog-file": changelogFile };
 }
 
 function serialize(changelog: Changelog): JsonObject {

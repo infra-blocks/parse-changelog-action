@@ -55,3 +55,9 @@ jobs:
         run: |
           # To respect nested stringified objects, we need to properly escape quotes.
           echo -e ${{ toJson(steps.self-test.outputs.outputs) }}
+      - name: Check outputs
+        run: |
+          if test "${{ fromJson(steps.self-test.outputs.outputs).changelog-file }}" != "TEST-CHANGELOG.md"; then
+            echo "Expected changelog-file to be 'TEST-CHANGELOG.md', but got '${{ steps.self-test.outputs.outputs.changelog-file }}'."
+            exit 1
+          fi
