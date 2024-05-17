@@ -1,9 +1,9 @@
 # parse-changelog-action
-[![Build](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/build.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/build.yml)
-[![Release](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/release.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/release.yml)
-[![Git Tag](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/git-tag.yml)
-[![Update From Template](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/parse-changelog-action/actions/workflows/update-from-template.yml)
-[![codecov](https://codecov.io/gh/infrastructure-blocks/parse-changelog-action/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infrastructure-blocks/parse-changelog-action)
+[![Build](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/build.yml/badge.svg)](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/build.yml)
+[![Release](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/release.yml/badge.svg)](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/release.yml)
+[![Git Tag](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/git-tag.yml)
+[![Update From Template](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/update-from-template.yml/badge.svg)](https://github.com/infra-blocks/parse-changelog-action/actions/workflows/update-from-template.yml)
+[![codecov](https://codecov.io/gh/infra-blocks/parse-changelog-action/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infra-blocks/parse-changelog-action)
 
 ## Inputs
 
@@ -57,7 +57,7 @@ N/A
 ## Usage
 
 ```yaml
-- uses: docker://public.ecr.aws/infrastructure-blocks/parse-changelog-action:v1
+- uses: docker://public.ecr.aws/infra-blocks/parse-changelog-action:v1
   with:
     changelog-file: DIFFERENT-CHANGELOG-FILE.md
 ```

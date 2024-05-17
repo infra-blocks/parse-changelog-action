@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    uses: infrastructure-blocks/typescript-build-workflow/.github/workflows/workflow.yml@v1
+    uses: infra-blocks/typescript-build-workflow/.github/workflows/workflow.yml@v1
     with:
       node-version-file: .nvmrc
     secrets:
@@ -37,7 +37,7 @@ jobs:
           registry-type: public
       - name: Build, tag and publish docker image
         id: docker-publish
-        uses: infrastructure-blocks/docker-publish-action@v1
+        uses: infra-blocks/docker-publish-action@v1
         with:
           service: action
           build-arguments:
