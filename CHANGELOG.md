@@ -18,5 +18,5 @@ the default).
 
 - First release!
 
-[1.1.0]: https://github.com/infrastructure-blocks/parse-changelog-action/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/infrastructure-blocks/parse-changelog-action/releases/tag/v1.0.0
+[1.1.0]: https://github.com/infra-blocks/parse-changelog-action/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/infra-blocks/parse-changelog-action/releases/tag/v1.0.0
